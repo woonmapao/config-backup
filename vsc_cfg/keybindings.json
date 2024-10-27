@@ -124,7 +124,7 @@
         "when": "textInputFocus"
     },
     {
-        "key": "f10",
+        "key": "f8",
         "command": "workbench.action.debug.stepOver",
         "when": "debugState == 'stopped'"
     },
@@ -142,5 +142,23 @@
         "key": "f11",
         "command": "-workbench.action.debug.stepInto",
         "when": "debugState != 'inactive'"
+    },
+    {
+        "key": "f10",
+        "command": "workbench.action.debug.stepOut",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "shift+f11",
+        "command": "-workbench.action.debug.stepOut",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "cmd+y",
+        "command": "redo"
+    },
+    {
+        "key": "shift+cmd+z",
+        "command": "-redo"
     }
 ]
