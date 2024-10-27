@@ -1,87 +1,48 @@
 {
-  // Most use
-  "editor.cursorStyle": "block",
-  "editor.cursorBlinking": "solid",
-  "editor.lineNumbers": "off",
-  "editor.folding": false,
-  "editor.glyphMargin": false,
-  "editor.fontFamily": "FiraCode Nerd Font",
-  "editor.mouseWheelZoom": true,
-  //
-  "breadcrumbs.enabled": false,
-  "editor.codeActionsOnSave": {},
-  "editor.fontLigatures": true,
-  "editor.fontSize": 14,
-  "editor.formatOnSave": true,
-  "editor.linkedEditing": true,
-  "editor.minimap.enabled": false,
-  "editor.suggest.insertMode": "replace",
-  "git.autofetch": true,
-  "go.toolsManagement.autoUpdate": true,
-  "gopls": {
-    "ui.semanticTokens": true
-  },
-  "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)",
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
-  "terminal.integrated.profiles.windows": {
-    "PowerShell": {
-      "source": "PowerShell",
-      "icon": "terminal-powershell"
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking": "solid",
+    "editor.lineNumbers": "off",
+    "editor.glyphMargin": true,
+    "editor.fontFamily": "MesloLGS NF",
+    "editor.fontLigatures": true,
+    "editor.formatOnSave": true,
+    "editor.linkedEditing": true,
+    "editor.minimap.enabled": false,
+    "editor.suggest.insertMode": "replace",
+    "editor.smoothScrolling": true,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "workbench.statusBar.visible": true,
+    "workbench.list.smoothScrolling": true,
+    "git.autofetch": true,
+    "go.toolsManagement.autoUpdate": true,
+    "gopls": {
+        "ui.semanticTokens": true
     },
-    "Command Prompt": {
-      "path": [
-        "${env:windir}\\Sysnative\\cmd.exe",
-        "${env:windir}\\System32\\cmd.exe"
-      ],
-      "args": [],
-      "icon": "terminal-cmd"
+    "cSpell.customDictionaries": {
+        "custom-dictionary-user": {
+            "name": "custom-dictionary-user",
+            "path": "~/.cspell/custom-dictionary-user.txt",
+            "addWords": true,
+            "scope": "user"
+        }
     },
-    "Git Bash": {
-      "source": "Git Bash"
+    "terminal.integrated.mouseWheelZoom": true,
+    "workbench.colorTheme": "Dracula Theme Soft",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "makefile.configureOnOpen": true,
+    "breadcrumbs.enabled": false,
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#FFB86C80",
+        "editor.lineHighlightBackground": "#44475A80",
+        "editor.lineHighlightBorder": "#6272A4",
+        "scrollbarSlider.background": "#44475A80",
+        "scrollbarSlider.hoverBackground": "#6272A4A0",
+        "scrollbarSlider.activeBackground": "#BD93F9C0",
+        "scrollbar.shadow": "#282A3600"
     },
-    "Ubuntu (WSL)": {
-      "path": "C:\\Windows\\System32\\wsl.exe",
-      "args": [
-        "-d",
-        "Ubuntu"
-      ]
-    }
-  },
-  "window.commandCenter": false,
-  "window.zoomLevel": 1,
-  "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "Dracula",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.layoutControl.enabled": false,
-  "window.menuBarVisibility": "compact",
-  "workbench.statusBar.visible": false,
-  "editor.renderLineHighlight": "none",
-  "multiCommand.commands": [
-    {
-      "command": "multiCommand.up1LineKeepCursor",
-      "sequence": [
-        {
-          "command": "editorScroll",
-          "args": {
-            "to": "up",
-            "by": "line"
-          }
-        },
-        "cursorUp"
-      ]
-    },
-    {
-      "command": "multiCommand.down1LineKeepCursor",
-      "sequence": [
-        {
-          "command": "editorScroll",
-          "args": {
-            "to": "down",
-            "by": "line"
-          }
-        },
-        "cursorDown"
-      ]
-    }
-  ]
+    "window.commandCenter": false,
+    "files.autoSave": "onFocusChange",
+    "cSpell.language": "en,en-US",
+    "editor.scrollbar.verticalScrollbarSize": 8,
+    "editor.scrollbar.horizontalScrollbarSize": 8
 }
