@@ -15,8 +15,22 @@
     "workbench.list.smoothScrolling": true,
     "git.autofetch": true,
     "go.toolsManagement.autoUpdate": true,
+    "go.formatTool": "goimports",
+    "go.lintTool": "golangci-lint",
+    "go.useLanguageServer": true,
     "gopls": {
-        "ui.semanticTokens": true
+        "ui.semanticTokens": true,
+        "formatting.gofumpt": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always"
+    },
+    "[go]": {
+        "editor.defaultFormatter": "golang.go",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "always"
+        }
     },
     "cSpell.customDictionaries": {
         "custom-dictionary-user": {
@@ -38,8 +52,45 @@
         "scrollbarSlider.background": "#44475A80",
         "scrollbarSlider.hoverBackground": "#6272A4A0",
         "scrollbarSlider.activeBackground": "#BD93F9C0",
-        "scrollbar.shadow": "#282A3600"
+        "scrollbar.shadow": "#282A3600",
+        // Debug token expression colors using Dracula theme
+        "debugTokenExpression.name": "#FF79C6", // Pink - For variable/property names
+        "debugTokenExpression.value": "#F1FA8C", // Green - For values
+        "debugTokenExpression.string": "#FFFFFF", // White - For string literals
+        "debugTokenExpression.boolean": "#BD93F9", // Purple - For boolean values
+        "debugTokenExpression.number": "#8BE9FD", // Cyan - For numeric values
+        "debugTokenExpression.error": "#FF5555" // Red - For error states
     },
+    "indentRainbow.colors": [
+        "rgba(255,121,198,0.1)", // Pink
+        "rgba(189,147,249,0.1)", // Purple
+        "rgba(139,233,253,0.1)", // Cyan
+        "rgba(80,250,123,0.1)", // Green
+        "rgba(255,184,108,0.1)" // Orange
+    ],
+    "indentRainbow.indicatorStyle": "light",
+    "indentRainbow.lightIndicatorStyleLineWidth": 4,
+    "indentRainbow.errorColor": "rgba(255,85,85,0)",
+    "indentRainbow.excludedLanguages": [
+        "plaintext"
+    ],
+    "vscode-pets.pets": [
+        {
+            "name": "Ginger",
+            "type": "cat",
+            "color": "orange",
+            "variant": "american-shorthair"
+        },
+        {
+            "name": "Snowball",
+            "type": "cat",
+            "color": "white",
+            "variant": "scottish-fold"
+        }
+    ],
+    "vscode-pets.roamingEnabled": true,
+    "vscode-pets.walkSpeed": 5,
+    "vscode-pets.petSize": "medium",
     "window.commandCenter": false,
     "files.autoSave": "onFocusChange",
     "cSpell.language": "en,en-US",
