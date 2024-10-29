@@ -154,11 +154,26 @@
         "when": "debugState == 'stopped'"
     },
     {
-        "key": "cmd+y",
+        "key": "shift+cmd+z",
         "command": "redo"
     },
     {
         "key": "shift+cmd+z",
         "command": "-redo"
+    },
+    {
+        "key": "cmd+y",
+        "command": "-editor.action.inlineDiffs.acceptPartialEdit",
+        "when": "editorTextFocus && (arbitrary function)"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus"
+    },
+    {
+        "key": "cmd+f12",
+        "command": "-editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus"
     }
 ]
