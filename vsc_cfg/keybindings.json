@@ -175,5 +175,13 @@
         "key": "cmd+f12",
         "command": "-editor.action.goToImplementation",
         "when": "editorHasImplementationProvider && editorTextFocus"
+    },
+    {
+        "key": "cmd+0",
+        "command": "-workbench.action.focusSideBar"
+    },
+    {
+        "key": "cmd+i",
+        "command": "composerMode.agent"
     }
 ]
