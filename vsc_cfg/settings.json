@@ -1,99 +1,100 @@
 {
-    "editor.cursorStyle": "block",
-    "editor.cursorBlinking": "solid",
-    "editor.lineNumbers": "off",
-    "editor.glyphMargin": true,
-    "editor.fontFamily": "MesloLGS NF",
-    "editor.fontLigatures": true,
-    "editor.formatOnSave": true,
-    "editor.linkedEditing": true,
-    "editor.minimap.enabled": false,
-    "editor.suggest.insertMode": "replace",
-    "editor.smoothScrolling": true,
-    "editor.cursorSmoothCaretAnimation": "on",
-    "workbench.statusBar.visible": true,
-    "workbench.list.smoothScrolling": true,
-    "git.autofetch": true,
-    "go.toolsManagement.autoUpdate": true,
-    "go.formatTool": "goimports",
-    "go.lintTool": "golangci-lint",
-    "go.useLanguageServer": true,
-    "gopls": {
-        "ui.semanticTokens": true,
-        "formatting.gofumpt": true
-    },
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": "always"
-    },
-    "[go]": {
-        "editor.defaultFormatter": "golang.go",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": "always"
-        }
-    },
-    "cSpell.customDictionaries": {
-        "custom-dictionary-user": {
-            "name": "custom-dictionary-user",
-            "path": "~/.cspell/custom-dictionary-user.txt",
-            "addWords": true,
-            "scope": "user"
-        }
-    },
-    "terminal.integrated.mouseWheelZoom": true,
-    "workbench.colorTheme": "Dracula Theme Soft",
+    "workbench.colorTheme": "Catppuccin Frappé",
+    "editor.fontFamily": "JetBrains Mono",
     "terminal.integrated.fontFamily": "MesloLGS NF",
-    "makefile.configureOnOpen": true,
-    "breadcrumbs.enabled": false,
-    "workbench.colorCustomizations": {
-        "editor.selectionBackground": "#FFB86C80",
-        "editor.lineHighlightBackground": "#44475A80",
-        "editor.lineHighlightBorder": "#6272A4",
-        "scrollbarSlider.background": "#44475A80",
-        "scrollbarSlider.hoverBackground": "#6272A4A0",
-        "scrollbarSlider.activeBackground": "#BD93F9C0",
-        "scrollbar.shadow": "#282A3600",
-        // Debug token expression colors using Dracula theme
-        "debugTokenExpression.name": "#FF79C6", // Pink - For variable/property names
-        "debugTokenExpression.value": "#F1FA8C", // Green - For values
-        "debugTokenExpression.string": "#FFFFFF", // White - For string literals
-        "debugTokenExpression.boolean": "#BD93F9", // Purple - For boolean values
-        "debugTokenExpression.number": "#8BE9FD", // Cyan - For numeric values
-        "debugTokenExpression.error": "#FF5555" // Red - For error states
-    },
-    "indentRainbow.colors": [
-        "rgba(255,121,198,0.1)", // Pink
-        "rgba(189,147,249,0.1)", // Purple
-        "rgba(139,233,253,0.1)", // Cyan
-        "rgba(80,250,123,0.1)", // Green
-        "rgba(255,184,108,0.1)" // Orange
-    ],
-    "indentRainbow.indicatorStyle": "light",
-    "indentRainbow.lightIndicatorStyleLineWidth": 4,
-    "indentRainbow.errorColor": "rgba(255,85,85,0)",
-    "indentRainbow.excludedLanguages": [
-        "plaintext"
-    ],
-    "vscode-pets.pets": [
-        {
-            "name": "Ginger",
-            "type": "cat",
-            "color": "orange",
-            "variant": "american-shorthair"
-        },
-        {
-            "name": "Snowball",
-            "type": "cat",
-            "color": "white",
-            "variant": "scottish-fold"
+    "editor.fontLigatures": true,
+    "editor.cursorStyle": "block",
+    "editor.cursorBlinking":"solid",
+    "editor.cursorSmoothCaretAnimation": "on",
+
+    "workbench.startupEditor": "none",
+    "workbench.editor.enablePreview": true,
+    "explorer.compactFolders": true,
+
+    "editor.minimap.enabled": false,
+    "editor.semanticHighlighting.enabled": true,
+    "editor.renderWhitespace": "none",
+    "editor.rulers": [100],
+    "editor.smoothScrolling": true,
+    "editor.codeLens": true,
+    "breadcrumbs.enabled": true,
+
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.detectIndentation": false,
+        "editor.tabSize": 4,
+        "editor.formatOnSave": true,
+        "editor.formatOnSaveMode": "file",
+        "editor.defaultFormatter": "golang.go",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            "source.fixAll": "explicit"
         }
+    },
+
+    "[go.mod]": {
+        "editor.defaultFormatter": "golang.go",
+        "editor.formatOnSave": true
+    },
+
+    "go.toolsManagement.autoUpdate": true,
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast"
     ],
-    "vscode-pets.roamingEnabled": true,
-    "vscode-pets.walkSpeed": 5,
-    "vscode-pets.petSize": "medium",
-    "window.commandCenter": false,
-    "files.autoSave": "onFocusChange",
-    "cSpell.language": "en,en-US",
-    "editor.scrollbar.verticalScrollbarSize": 8,
-    "editor.scrollbar.horizontalScrollbarSize": 8
+    "go.lintOnSave": "package",
+    "go.testFlags": [
+        "-v"
+    ],
+    "go.delveConfig": {
+        "apiVersion": 2,
+        "dlvLoadConfig": {
+            "maxVariableRecurse": 1,
+            "maxStringLen": 120,
+            "maxArrayValues": 64,
+            "maxStructFields": -1
+        }
+    },
+
+    "gopls": {
+        "gofumpt": true,
+        "usePlaceholders": true,
+        "staticcheck": true,
+        "analyses": {
+            "unusedparams": true,
+            "unusedwrite": true,
+            "nilness": true
+        }
+    },
+
+    "telemetry.telemetryLevel": "off",
+    "workbench.enableExperiments": false,
+    "terminal.integrated.env.osx": {
+        "Q_NEW_SESSION": "1"
+    },
+    "terminal.integrated.profiles.osx": {
+        "nushell": {
+            "path": "/opt/homebrew/bin/nu"
+        }
+    },
+    "terminal.integrated.defaultProfile.osx": "nushell",
+    "git.openRepositoryInParentFolders": "never",
+    "cursor.composer.usageSummaryDisplay": "always",
+    "editor.occurrencesHighlight": "multiFile",
+    "makefile.configureOnOpen": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "terminal.integrated.accessibleViewPreserveCursorPosition": true,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    }
 }
