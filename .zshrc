@@ -1,7 +1,7 @@
-# Enable Powerlevel10k instant prompt
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# Powerlevel10k instant prompt (disabled: switched to Starship, see bottom of file)
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # Homebrew: skip duplicate shellenv when login .zprofile already ran (faster startup).
 if [[ -z "${HOMEBREW_PREFIX:-}" ]]; then
@@ -14,7 +14,7 @@ fi
 
 # Oh My Zsh configuration
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME=""  # disabled: Starship renders the prompt now (Oh My Zsh plugins still load below)
 
 COMPLETION_WAITING_DOTS=true
 
@@ -42,56 +42,60 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE      # omit commands prefixed with a space
 setopt SHARE_HISTORY          # share history across concurrent sessions
 
-# Dracula-style token colors (must load before oh-my-zsh so the assoc array is created correctly).
+# Catppuccin Latte token colors, matched to the editor theme (must load before oh-my-zsh
+# so the assoc array is created correctly).
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main cursor)
 typeset -gA ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES=(
-  comment                           'fg=#6272A4'
-  alias                             'fg=#50FA7B'
-  suffix-alias                      'fg=#50FA7B'
-  global-alias                      'fg=#50FA7B'
-  function                          'fg=#50FA7B'
-  command                           'fg=#50FA7B'
-  precommand                        'fg=#50FA7B,italic'
-  autodirectory                     'fg=#FFB86C,italic'
-  single-hyphen-option              'fg=#FFB86C'
-  double-hyphen-option              'fg=#FFB86C'
-  back-quoted-argument              'fg=#BD93F9'
-  builtin                           'fg=#8BE9FD'
-  reserved-word                     'fg=#8BE9FD'
-  hashed-command                    'fg=#8BE9FD'
-  commandseparator                  'fg=#FF79C6'
-  command-substitution-delimiter    'fg=#F8F8F2'
-  back-quoted-argument-delimiter    'fg=#FF79C6'
-  back-double-quoted-argument       'fg=#FF79C6'
-  back-dollar-quoted-argument       'fg=#FF79C6'
-  command-substitution-quoted       'fg=#F1FA8C'
-  single-quoted-argument            'fg=#F1FA8C'
-  double-quoted-argument            'fg=#F1FA8C'
-  single-quoted-argument-unclosed   'fg=#FF5555'
-  double-quoted-argument-unclosed   'fg=#FF5555'
-  rc-quote                          'fg=#F1FA8C'
-  dollar-quoted-argument            'fg=#F8F8F2'
-  dollar-quoted-argument-unclosed   'fg=#FF5555'
-  assign                            'fg=#F8F8F2'
-  named-fd                          'fg=#F8F8F2'
-  numeric-fd                        'fg=#F8F8F2'
-  unknown-token                     'fg=#FF5555'
-  path                              'fg=#F8F8F2'
-  path_pathseparator                'fg=#FF79C6'
-  path_prefix                       'fg=#F8F8F2'
-  globbing                          'fg=#F8F8F2'
-  history-expansion                 'fg=#BD93F9'
-  back-quoted-argument-unclosed     'fg=#FF5555'
-  redirection                       'fg=#F8F8F2'
-  arg0                              'fg=#F8F8F2'
-  default                           'fg=#F8F8F2'
+  comment                           'fg=#7C7F93,italic'
+  alias                             'fg=#1E66F5,italic'
+  suffix-alias                      'fg=#1E66F5,italic'
+  global-alias                      'fg=#1E66F5,italic'
+  function                          'fg=#1E66F5,italic'
+  command                           'fg=#1E66F5'
+  precommand                        'fg=#1E66F5,italic'
+  autodirectory                     'fg=#FE640B,italic'
+  single-hyphen-option              'fg=#FE640B'
+  double-hyphen-option              'fg=#FE640B'
+  back-quoted-argument              'fg=#8839EF'
+  builtin                           'fg=#209FB5'
+  reserved-word                     'fg=#8839EF'
+  hashed-command                    'fg=#1E66F5'
+  commandseparator                  'fg=#179299'
+  command-substitution-delimiter    'fg=#4C4F69'
+  back-quoted-argument-delimiter    'fg=#EA76CB'
+  back-double-quoted-argument       'fg=#EA76CB'
+  back-dollar-quoted-argument       'fg=#EA76CB'
+  command-substitution-quoted       'fg=#40A02B'
+  single-quoted-argument            'fg=#40A02B'
+  double-quoted-argument            'fg=#40A02B'
+  single-quoted-argument-unclosed   'fg=#D20F39'
+  double-quoted-argument-unclosed   'fg=#D20F39'
+  rc-quote                          'fg=#40A02B'
+  dollar-quoted-argument            'fg=#4C4F69'
+  dollar-quoted-argument-unclosed   'fg=#D20F39'
+  assign                            'fg=#4C4F69'
+  named-fd                          'fg=#4C4F69'
+  numeric-fd                        'fg=#4C4F69'
+  unknown-token                     'fg=#D20F39'
+  path                              'fg=#4C4F69'
+  path_pathseparator                'fg=#EA76CB'
+  path_prefix                       'fg=#4C4F69'
+  globbing                          'fg=#4C4F69'
+  history-expansion                 'fg=#8839EF'
+  back-quoted-argument-unclosed     'fg=#D20F39'
+  redirection                       'fg=#4C4F69'
+  arg0                              'fg=#4C4F69'
+  default                           'fg=#4C4F69'
   cursor                            'standout'
 )
 
+# zsh-autosuggestions: default dim grey is unreadable on a light background.
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#8C8FA1'
+
 source $ZSH/oh-my-zsh.sh
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh  # disabled: Starship replaces p10k
 
 if command -v zoxide >/dev/null 2>&1; then
   eval "$(zoxide init zsh)"
@@ -128,3 +132,11 @@ export PATH="$HOME/.local/bin:$PATH"
 if (( ${+commands[colorls]} )); then
   alias lc='colorls -lA --sd'
 fi
+
+# >>> backend-setup >>>
+eval "$(mise activate zsh)"
+eval "$(direnv hook zsh)"
+eval "$(starship init zsh)"
+alias cat='bat'
+alias rg='rg --smart-case'
+# <<< backend-setup <<<

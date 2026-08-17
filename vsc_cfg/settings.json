@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Catppuccin Frappé",
+    "workbench.colorTheme": "Catppuccin Latte",
     "editor.fontFamily": "JetBrains Mono",
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "editor.fontLigatures": true,
@@ -96,5 +96,6 @@
     },
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
-    }
+    },
+    "git.autofetch": true
 }

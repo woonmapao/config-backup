@@ -1,0 +1,5 @@
+[user]
+	name = Pattarapong Li
+	email = patarapong_li@minor.com
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
